@@ -16,12 +16,15 @@ document.addEventListener('DOMContentLoaded', () => {
             // create remove button
             const button = document.createElement('button');
             button.textContent = 'Remove';
-            button.className = 'remove-btn'; // creates a class name for the button
+            button.classList.add('remove-btn'); // the one below is an alternate method
+            // button.className = 'remove-btn'; // creates a class name for the button
             button.onclick = function() {
                 li.remove(); // when clicked removes the task added by the user from the taskList
             } 
-            li.append(button); // if not appended remove button will not be shown
-            taskList.append(li); // if not appended the user input isn't not stored in the taskList(my to do list)
+            li.appendChild(button); //
+            // li.append(button); // if not appended remove button will not be shown
+            taskList.appendChild(li); // the one below is an alternate method
+            // taskList.append(li); // if not appended the user input isn't not stored in the taskList(my to do list)
             taskInput.value = ''; // to clear the input field once a task is added
         }
         // taskInput.value = ''; // works fine here too. but if taskText is already empty(it would throw an alert and) clearing an empty input field would be redundant
