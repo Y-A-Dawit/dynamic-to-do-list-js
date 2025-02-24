@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
     addButton.addEventListener('click', () =>  addTask()); // creates an anonymous function that calls addTask() without any arguments
     // here since there is a parenthesis as soon as the page loads, it will execute but the arrow function prevents that and trigers the addTask function when add task button is clicked
     
-    const taskInput = document.getElementById('task-input');
+    const taskInput = document.getElementById('task-input'); // this one listens to physical keyboard changes to add the tasks without the add button
     taskInput.addEventListener('keypress', (event) => {
         if (event.key === 'Enter') {
             addTask();
