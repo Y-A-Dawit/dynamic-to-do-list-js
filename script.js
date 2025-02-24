@@ -44,7 +44,7 @@ function addTask(taskText = null, save = true) { // just use this when storing, 
     taskList.appendChild(li);
     
     // Save to Local Storage
-    if (save) { // has a boolean value(either true or false), if save === true task gets saved in local storage, if not(lke when calling addTask(taskText, false) inside loadTasks()) task only added to UI(webpage) without saving
+    if (save) { // has a boolean value(either true or false), if save === true task gets saved in local storage, if not(like when calling addTask(taskText, false) inside loadTasks()) task only added to UI(webpage) without saving
         let storedTasks = JSON.parse(localStorage.getItem('tasks') || '[]'); // retrieves task from local storage as JSON string or "null(if there isn't any taks)" converts them into object
         storedTasks.push(taskText); // storedTasks in an array since json.parse is used above, and add each task(string) into the array updating storedTasks
         localStorage.setItem('tasks', JSON.stringify(storedTasks)); // array to string conversion, since local storage can only store strings, and .setItem stores it in the browser's local storage
